@@ -1,0 +1,42 @@
+{
+    "name": "yate-wireless/api",
+    "description": "Yate core products API wrapper for PHP",
+    "type": "library",
+    "homepage": "https://github.com/yate-wireless/api",
+    "keywords": ["yatebts", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Pavlyuts",
+            "email": "alexey@pavlyuts.ru"
+        }
+    ],
+    "support": {
+        "email": "alexey@pavlyuts.ru",
+        "issues": "https://github.com/yate-wireless/api/issues",
+        "wiki": "https://github.com/yate-wireless/api/wiki",
+        "source": "https://github.com/yate-wireless/api",
+        "docs": "https://yate-wireless.github.io/api/"
+    },
+    "require": {
+        "psr/http-client": "^1.0.3",
+        "psr/http-message": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yate\\Api\\": "Yate/Api"
+        }
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.2",
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YateApiTest\\": "Test"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --configuration Test/configuration.xml Test --coverage-text"
+    }
+}
