@@ -1,6 +1,6 @@
 parameters:
   # string[], passed as arguments in CLI, e.g. ['src']
-  paths: ['Yate/Api']
+  paths: ['Yate/Api', 'example']
 
   # string[], --include in CLI, included files mask, e.g. ['*.php']
   include: ['*.php']
