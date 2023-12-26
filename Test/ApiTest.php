@@ -11,8 +11,10 @@ use Yate\Api\Api;
 use Yate\Api\Exception\YateConnectException;
 use Yate\Api\Exception\YateApiException;
 use Yate\Api\ConfigInterface;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 
 /**
  * Tests for Api
@@ -36,24 +38,31 @@ class ApiTest extends \PHPUnit\Framework\TestCase
         ];
         $bodyJson = json_encode($bodyArray);
 
-        $c = $this->getMockForAbstractClass(ConfigInterface::class);
-        $c->expects($this->once())
+        $config = $this->getMockForAbstractClass(ConfigInterface::class);
+        $config->expects($this->once())
                 ->method('getNodeUri')
                 ->with(self::NODE)
                 ->willReturn(self::URI);
-        $c->expects($this->once())
-                ->method('createRequest')
-                ->with(self::URI)
-                ->willReturn(new Request('POST', self::URI));
-        $c->expects($this->once())
+        $config->expects($this->once())
                 ->method('getNodeSecret')
                 ->with(self::NODE)
                 ->willReturn(self::SECRET);
-        $c->expects($this->once())
+
+        $reqiestFactory = $this->getMockForAbstractClass(RequestFactoryInterface::class);
+        $reqiestFactory->expects($this->once())
+                ->method('createRequest')
+                ->with('POST', self::URI)
+                ->willReturn(new Psr7\Request('POST', self::URI));
+
+        $streamFactory = $this->getMockForAbstractClass(StreamFactoryInterface::class);
+        $streamFactory->expects($this->once())
                 ->method('createStream')
                 ->with($bodyJson)
                 ->willReturn(Psr7\Utils::streamFor($bodyJson));
-        $api = new Api($c);
+
+        $client = $this->getMockForAbstractClass(ClientInterface::class);
+
+        $api = new Api($config, $reqiestFactory, $streamFactory, $client);
 
         $q = $api->prepareRequest(self::NODE, self::REQUEST, self::PARAMS);
         $this->assertEquals('POST', $q->getMethod());
@@ -110,13 +119,15 @@ class ApiTest extends \PHPUnit\Framework\TestCase
 
     protected function preapareTestCall($client, $request)
     {
-        $config = $this->getMockForAbstractClass(ConfigInterface::class);
-        $config->expects($this->once())
-                ->method('getClient')
-                ->willReturn($client);
-
         $api = $this->getMockBuilder(Api::class)
-                ->setConstructorArgs([$config])
+                ->setConstructorArgs(
+                        [
+                            $this->getMockForAbstractClass(ConfigInterface::class),
+                            $this->getMockForAbstractClass(RequestFactoryInterface::class),
+                            $this->getMockForAbstractClass(StreamFactoryInterface::class),
+                            $client
+                        ]
+                )
                 ->onlyMethods(['prepareRequest'])
                 ->getMock();
         $api->expects($this->once())

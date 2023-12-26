@@ -7,37 +7,37 @@
 
 namespace YateApiTest;
 
-use Yate\Api\ConfigNodeTrait;
+use Yate\Api\Config;
 use Yate\Api\Exception\YateConfigException;
 
 /**
  * Test for ConfigNodesTrait
  *
  */
-class ConfigNodesTraitTest extends \PHPUnit\Framework\TestCase
+class ConfigTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testSet()
     {
-        $t = $this->getMockForTrait(ConfigNodeTrait::class);
-        $this->assertEquals($t, $t->withNode(['test'], 'http://test.org/api.php', 'bigSecret'));
-        $this->assertEquals('http://test.org/api.php', $t->getNodeUri('test'));
-        $this->assertEquals('bigSecret', $t->getNodeSecret('test'));
+        $config = new Config();
+        $this->assertEquals($config, $config->withNode(['test'], 'http://test.org/api.php', 'bigSecret'));
+        $this->assertEquals('http://test.org/api.php', $config->getNodeUri('test'));
+        $this->assertEquals('bigSecret', $config->getNodeSecret('test'));
     }
 
     public function testUriNotFound()
     {
-        $t = $this->getMockForTrait(ConfigNodeTrait::class);
+        $config = new Config();
         $this->expectException(YateConfigException::class);
         $this->expectExceptionMessage("Uri not found for node 'test'");
-        $t->getNodeUri('test');
+        $config->getNodeUri('test');
     }
 
     public function testSeretNotFound()
     {
-        $t = $this->getMockForTrait(ConfigNodeTrait::class);
+        $config = new Config();
         $this->expectException(YateConfigException::class);
         $this->expectExceptionMessage("Secret not found for node 'test'");
-        $t->getNodeSecret('test');
+        $config->getNodeSecret('test');
     }
 }

@@ -7,9 +7,6 @@
 
 namespace Yate\Api;
 
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Client\ClientInterface;
 use Yate\Api\Exception\YateException;
 
 /**
@@ -17,8 +14,6 @@ use Yate\Api\Exception\YateException;
  *
  * Configuration object stores core API configutarion, including access keys and
  * all external bindings.
- * Also it works as a factory for Request and Stream to collect all dependencies
- * in one class.
  */
 interface ConfigInterface
 {
@@ -46,29 +41,4 @@ interface ConfigInterface
      * @throws YateException
      */
     public function getNodeSecret(string $node): string;
-
-    /**
-     * Creates POST Request object with given URI
-     *
-     * @param string $uri
-     * @return RequestInterface
-     */
-    public function createRequest(string $uri): RequestInterface;
-
-    /**
-     * Creates Stream with given content
-     *
-     * @param string $content
-     * @return StreamInterface
-     */
-    public function createStream(string $content): StreamInterface;
-
-    /**
-     * Provides PSR-18 HTTP Client object
-     *
-     * Returns HTTP client instance which API will use to call the core
-     *
-     * @return ClientInterface
-     */
-    public function getClient(): ClientInterface;
 }

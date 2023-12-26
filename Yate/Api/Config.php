@@ -10,10 +10,13 @@ namespace Yate\Api;
 use Yate\Api\Exception\YateConfigException;
 
 /**
- * Trait to handle Yate Node configuratons
+ * Base Config impementation to use out-of-the-box
+ *
+ * You may extend with constructor which will take Yate core location and secrets
+ * from whereever you want: file, environments, e.t.c.
  *
  */
-trait ConfigNodeTrait
+class Config
 {
 
     protected array $uris = [];

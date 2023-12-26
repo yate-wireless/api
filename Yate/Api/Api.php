@@ -9,6 +9,9 @@ namespace Yate\Api;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Client\ClientExceptionInterface;
 use Yate\Api\Exception\YateConnectException;
 use Yate\Api\Exception\YateApiException;
@@ -28,15 +31,28 @@ class Api
     protected const JSON_FLAGS = 0;
 
     protected ConfigInterface $config;
+    protected RequestFactoryInterface $requestFactory;
+    protected StreamFactoryInterface $streamFactory;
+    protected ClientInterface $client;
 
     /**
      * Setups API with ConfigInterface object
      *
      * @param ConfigInterface $config
+     * @param RequestFactoryInterface $requestFactory
+     * @param StreamFactoryInterface $streamFactory
+     * @param ClientInterface $client
      */
-    public function __construct(ConfigInterface $config)
+    public function __construct(
+            ConfigInterface $config,
+            RequestFactoryInterface $requestFactory,
+            StreamFactoryInterface $streamFactory,
+            ClientInterface $client)
     {
         $this->config = $config;
+        $this->requestFactory = $requestFactory;
+        $this->streamFactory = $streamFactory;
+        $this->client = $client;
     }
 
     /**
@@ -49,11 +65,11 @@ class Api
      */
     public function prepareRequest(string $node, string $request, array $params = []): RequestInterface
     {
-        return $this->config->createRequest($this->config->getNodeUri($node))
+        return $this->requestFactory->createRequest('POST', $this->config->getNodeUri($node))
                         ->withHeader('Content-Type', 'application/json')
                         ->withHeader('X-Authentication', $this->config->getNodeSecret($node))
                         ->withBody(
-                                $this->config->createStream(
+                                $this->streamFactory->createStream(
                                         json_encode(
                                                 [
                                                     self::NODE => $node,
@@ -111,7 +127,7 @@ class Api
     {
         try {
             return self::parseResult(
-                            $this->config->getClient()->sendRequest(
+                            $this->client->sendRequest(
                                     $this->prepareRequest($node, $request, $params)
                             )
             );
