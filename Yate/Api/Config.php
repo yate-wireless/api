@@ -16,7 +16,7 @@ use Yate\Api\Exception\YateConfigException;
  * from whereever you want: file, environments, e.t.c.
  *
  */
-class Config
+class Config implements ConfigInterface
 {
 
     protected array $uris = [];
