@@ -19,9 +19,9 @@
         "docs": "https://yate-wireless.github.io/api/"
     },
     "require": {
-        "psr/http-client": "^1.0.3",
-        "psr/http-message": "^2.0",
-        "psr/http-factory": "^1.0.2"
+        "psr/http-message-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/http-client-implementation": "^1.0"
     },
     "autoload": {
         "psr-4": {
