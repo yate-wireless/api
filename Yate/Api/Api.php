@@ -36,7 +36,7 @@ class Api
     protected ClientInterface $client;
 
     /**
-     * Setups API with ConfigInterface object
+     * Setups API with config and dependencies
      *
      * @param ConfigInterface $config
      * @param RequestFactoryInterface $requestFactory
@@ -86,7 +86,7 @@ class Api
      * Parse PSR-7 Response object from Yate API
      *
      * Chcks for any problems with answer and throws proper exceptions.
-     * If the answer is a good one, retun it as {@see ApiResponse} instance
+     * If the answer is a good one, retun it as ApiResponse instance
      *
      * @param ResponseInterface $response Response from API as PSR-7 object
      * @return ApiResponse Successfull response as ApiResponse object
