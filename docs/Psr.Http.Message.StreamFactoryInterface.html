@@ -1,0 +1,295 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Interface Psr\Http\Message\StreamFactoryInterface | Yate core API wrapper API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Psr.html">Psr</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Psr.Http.html">Http</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Psr.Http.Message.html">Message</a>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-Yate.html">Yate</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-Yate.Api.html">Api</a>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li>
+						<a href="Psr.Http.Message.MessageInterface.html">
+							MessageInterface
+						</a>
+					</li>
+					<li>
+						<a href="Psr.Http.Message.RequestFactoryInterface.html">
+							RequestFactoryInterface
+						</a>
+					</li>
+					<li>
+						<a href="Psr.Http.Message.RequestInterface.html">
+							RequestInterface
+						</a>
+					</li>
+					<li>
+						<a href="Psr.Http.Message.ResponseInterface.html">
+							ResponseInterface
+						</a>
+					</li>
+					<li class="active">
+						<a href="Psr.Http.Message.StreamFactoryInterface.html">
+							StreamFactoryInterface
+						</a>
+					</li>
+					<li>
+						<a href="Psr.Http.Message.StreamInterface.html">
+							StreamInterface
+						</a>
+					</li>
+					<li>
+						<a href="Psr.Http.Message.UriInterface.html">
+							UriInterface
+						</a>
+					</li>
+			</ul>
+		</div>
+
+
+
+
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Psr.Http.Message.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Psr.Http.Message.StreamFactoryInterface.html">Interface</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Interface <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a>\<a href="Psr.Http.Message.StreamFactoryInterface.html">StreamFactoryInterface</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+
+	</table>
+
+
+		<div class="classLikeSection">
+
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="createStream" id="_createStream">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>createStream(<span>string <var>$content</var> = <span class="php-str">''</span></span>): <a href="Psr.Http.Message.StreamInterface.html"><span title="Psr\Http\Message\StreamInterface">StreamInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Create a new stream from a string.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Create a new stream from a string.</p>
+<p>The stream SHOULD be created with a temporary resource.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$content</var>&nbsp;&nbsp;</td>
+										<td><p>String content with which to populate the stream.</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_createStream">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="createStreamFromFile" id="_createStreamFromFile">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>createStreamFromFile(<span>string <var>$filename</var></span>, <span>string <var>$mode</var> = <span class="php-str">'r'</span></span>): <a href="Psr.Http.Message.StreamInterface.html"><span title="Psr\Http\Message\StreamInterface">StreamInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Create a stream from an existing file.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Create a stream from an existing file.</p>
+<p>The file MUST be opened using the given mode, which may be any mode
+supported by the <code>fopen</code> function.</p>
+<p>The <code>$filename</code> MAY be any string supported by <code>fopen()</code>.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$filename</var>&nbsp;&nbsp;</td>
+										<td><p>Filename or stream URI to use as basis of stream.</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$mode</var>&nbsp;&nbsp;</td>
+										<td><p>Mode with which to open the underlying filename/stream.</p>
+</td>
+									</tr>
+							</table>
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="RuntimeException.html"><span>RuntimeException</span></a></code>&nbsp;</td>
+										<td><p>If the file cannot be opened.</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="InvalidArgumentException.html"><span>InvalidArgumentException</span></a></code>&nbsp;</td>
+										<td><p>If the mode is invalid.</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_createStreamFromFile">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="createStreamFromResource" id="_createStreamFromResource">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>createStreamFromResource(<span>resource <var>$resource</var></span>): <a href="Psr.Http.Message.StreamInterface.html"><span title="Psr\Http\Message\StreamInterface">StreamInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Create a new stream from an existing resource.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Create a new stream from an existing resource.</p>
+<p>The stream MUST be readable and may be writable.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$resource</var>&nbsp;&nbsp;</td>
+										<td><p>PHP resource to use as basis of stream.</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_createStreamFromResource">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+
+		</div>
+
+		<div class="layout-footer">
+			Yate core API wrapper API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.4</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>

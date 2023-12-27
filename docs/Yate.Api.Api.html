@@ -1,0 +1,577 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Class Yate\Api\Api | Yate core API wrapper API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Yate.html">Yate</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Yate.Api.html">Api</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-Yate.Api.Exception.html">Exception</a>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Classes</h3>
+			<ul>
+					<li class="active">
+						<a href="Yate.Api.Api.html">
+							Api
+						</a>
+					</li>
+					<li>
+						<a href="Yate.Api.ApiResponse.html">
+							ApiResponse
+						</a>
+					</li>
+					<li>
+						<a href="Yate.Api.Config.html">
+							Config
+						</a>
+					</li>
+			</ul>
+		</div>
+
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li>
+						<a href="Yate.Api.ConfigInterface.html">
+							ConfigInterface
+						</a>
+					</li>
+			</ul>
+		</div>
+
+
+
+
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Yate.Api.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Yate.Api.Api.html">Class</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Class <a href="namespace-Yate.html">Yate</a>\<a href="namespace-Yate.Api.html">Api</a>\<a href="Yate.Api.Api.html">Api</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+
+
+
+
+	</table>
+		<div class="classLikeDescription">
+	<div class="description"><p>Yate core API wrapper</p>
+</div>
+		</div>
+
+
+		<div class="classLikeSection">
+			<b>Located at</b> <a href="source-Yate.Api.Api.html#23" title="Go to source code">Yate/Api/Api.php</a><br>
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="__construct" id="___construct">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.Api.html#38-56" title="Go to source code">__construct</a>(
+	<span><a href="Yate.Api.ConfigInterface.html"><span title="Yate\Api\ConfigInterface">ConfigInterface</span></a> <var>$config</var></span>,
+	<span><a href="Psr.Http.Message.RequestFactoryInterface.html"><span title="Psr\Http\Message\RequestFactoryInterface">RequestFactoryInterface</span></a> <var>$requestFactory</var></span>,
+	<span><a href="Psr.Http.Message.StreamFactoryInterface.html"><span title="Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</span></a> <var>$streamFactory</var></span>,
+	<span><a href="Psr.Http.Client.ClientInterface.html"><span title="Psr\Http\Client\ClientInterface">ClientInterface</span></a> <var>$client</var></span>,
+)</code>
+
+
+	<div class="expandable-collapsedView">
+		Setups API with config and dependencies
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Setups API with config and dependencies</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#___construct">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="prepareRequest" id="_prepareRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.Api.html#58-83" title="Go to source code">prepareRequest</a>(<span>string <var>$node</var></span>, <span>string <var>$request</var></span>, <span>array <var>$params</var> = []</span>): <a href="Psr.Http.Message.RequestInterface.html"><span title="Psr\Http\Message\RequestInterface">RequestInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Generates Request object for given node, API endpoint (request) and params
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Generates Request object for given node, API endpoint (request) and params</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$node</var>&nbsp;&nbsp;</td>
+										<td><p>Yate node name like 'ucn', 'hss', 'smsc', 'dra', e.t.c.</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$request</var>&nbsp;&nbsp;</td>
+										<td><p>Yate API 'request' string</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$params</var>&nbsp;&nbsp;</td>
+										<td><p>Array of params to pass</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_prepareRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="parseResult" id="_parseResult">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					static
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.Api.html#85-114" title="Go to source code">parseResult</a>(<span><a href="Psr.Http.Message.ResponseInterface.html"><span title="Psr\Http\Message\ResponseInterface">ResponseInterface</span></a> <var>$response</var></span>): <a href="Yate.Api.ApiResponse.html"><span title="Yate\Api\ApiResponse">ApiResponse</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Parse PSR-7 Response object from Yate API
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Parse PSR-7 Response object from Yate API</p>
+<p>Chcks for any problems with answer and throws proper exceptions.
+If the answer is a good one, retun it as ApiResponse instance</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$response</var>&nbsp;&nbsp;</td>
+										<td><p>Response from API as PSR-7 object</p>
+</td>
+									</tr>
+							</table>
+
+							<h4>Returns</h4>
+							<div><p>Successfull response as ApiResponse object</p>
+</div>
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateConnectException.html"><span>Yate\Api\Exception\YateConnectException</span></a></code>&nbsp;</td>
+										<td><p>In a case of HTTP errors</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateApiException.html"><span>Yate\Api\Exception\YateApiException</span></a></code>&nbsp;</td>
+										<td><p>In a case of API errors</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_parseResult">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="call" id="_call">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.Api.html#116-137" title="Go to source code">call</a>(<span>string <var>$node</var></span>, <span>string <var>$request</var></span>, <span>array <var>$params</var> = []</span>): <a href="Yate.Api.ApiResponse.html"><span title="Yate\Api\ApiResponse">ApiResponse</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Performs API call
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Performs API call</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$node</var>&nbsp;&nbsp;</td>
+										<td><p>Yate node name like 'ucn', 'hss', 'smsc', 'dra', e.t.c.</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$request</var>&nbsp;&nbsp;</td>
+										<td><p>Yate API 'request' string</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$params</var>&nbsp;&nbsp;</td>
+										<td><p>Array of params to pass</p>
+</td>
+									</tr>
+							</table>
+
+							<h4>Returns</h4>
+							<div><p>Successfull response as ApiResponse object</p>
+</div>
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateConnectException.html"><span>Yate\Api\Exception\YateConnectException</span></a></code>&nbsp;</td>
+										<td><p>In a case of HTTP/connection errors</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateApiException.html"><span>Yate\Api\Exception\YateApiException</span></a></code>&nbsp;</td>
+										<td><p>In a case of API errors</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_call">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+		<table class="table" id="constants">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Constants</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="NODE" id="NODE">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#26" title="Go to source code">NODE</a> = <span class="php-str">'node'</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#NODE">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="REQUEST" id="REQUEST">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#27" title="Go to source code">REQUEST</a> = <span class="php-str">'request'</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#REQUEST">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="PARAMS" id="PARAMS">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#28" title="Go to source code">PARAMS</a> = <span class="php-str">'params'</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#PARAMS">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="CODE" id="CODE">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#29" title="Go to source code">CODE</a> = <span class="php-str">'code'</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#CODE">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="MESSAGE" id="MESSAGE">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#30" title="Go to source code">MESSAGE</a> = <span class="php-str">'message'</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#MESSAGE">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="JSON_FLAGS" id="JSON_FLAGS">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code><a href="source-Yate.Api.Api.html#31" title="Go to source code">JSON_FLAGS</a> = <span class="php-num">0</span></code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#JSON_FLAGS">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+		<table class="table" id="properties">
+			<tr>
+				<th class="table-heading sortable" colspan="4" title="Switch between natural and alphabetical order">Properties</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="config" id="$config">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"><a href="Yate.Api.ConfigInterface.html"><span title="Yate\Api\ConfigInterface">ConfigInterface</span></a></code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-Yate.Api.Api.html#33" title="Go to source code">$config</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$config">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="requestFactory" id="$requestFactory">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"><a href="Psr.Http.Message.RequestFactoryInterface.html"><span title="Psr\Http\Message\RequestFactoryInterface">RequestFactoryInterface</span></a></code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-Yate.Api.Api.html#34" title="Go to source code">$requestFactory</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$requestFactory">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="streamFactory" id="$streamFactory">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"><a href="Psr.Http.Message.StreamFactoryInterface.html"><span title="Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</span></a></code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-Yate.Api.Api.html#35" title="Go to source code">$streamFactory</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$streamFactory">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="client" id="$client">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"><a href="Psr.Http.Client.ClientInterface.html"><span title="Psr\Http\Client\ClientInterface">ClientInterface</span></a></code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-Yate.Api.Api.html#36" title="Go to source code">$client</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$client">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+		</div>
+
+		<div class="layout-footer">
+			Yate core API wrapper API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.4</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Interface Yate\Api\ConfigInterface | Yate core API wrapper API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Yate.html">Yate</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Yate.Api.html">Api</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-Yate.Api.Exception.html">Exception</a>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Classes</h3>
+			<ul>
+					<li>
+						<a href="Yate.Api.Api.html">
+							Api
+						</a>
+					</li>
+					<li>
+						<a href="Yate.Api.ApiResponse.html">
+							ApiResponse
+						</a>
+					</li>
+					<li>
+						<a href="Yate.Api.Config.html">
+							Config
+						</a>
+					</li>
+			</ul>
+		</div>
+
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li class="active">
+						<a href="Yate.Api.ConfigInterface.html">
+							ConfigInterface
+						</a>
+					</li>
+			</ul>
+		</div>
+
+
+
+
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Yate.Api.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Yate.Api.ConfigInterface.html">Interface</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Interface <a href="namespace-Yate.html">Yate</a>\<a href="namespace-Yate.Api.html">Api</a>\<a href="Yate.Api.ConfigInterface.html">ConfigInterface</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+
+	</table>
+		<div class="classLikeDescription">
+	<div class="description"><p>Interface for configuration object</p>
+<p>Configuration object stores core API configutarion, including access keys and
+all external bindings.</p>
+</div>
+		</div>
+
+			<div class="classLikeSection">
+	<ul class="classTree">
+	<li>
+<b><span class="active">Yate\Api\ConfigInterface</span></b>
+
+
+	<ul class="classTree">
+	<li>
+<a href="Yate.Api.Config.html"><span>Yate\Api\Config</span></a>
+
+		implements
+			<b><span class="active" title="Yate\Api\ConfigInterface">ConfigInterface</span></b>
+
+	</li>
+	</ul>
+	</li>
+	</ul>
+			</div>
+
+		<div class="classLikeSection">
+			<b>Located at</b> <a href="source-Yate.Api.ConfigInterface.html#18" title="Go to source code">Yate/Api/ConfigInterface.php</a><br>
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="getNodeUri" id="_getNodeUri">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.ConfigInterface.html#21-31" title="Go to source code">getNodeUri</a>(<span>string <var>$node</var></span>): string</code>
+
+
+	<div class="expandable-collapsedView">
+		Provides API URI for given node
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Provides API URI for given node</p>
+<p>Should return API URI for e given node as string. If there no URI for a
+node configured, YateException must be thrown.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateException.html"><span>Yate\Api\Exception\YateException</span></a></code>&nbsp;</td>
+										<td></td>
+									</tr>
+							</table>
+
+		<h4>Implemented by</h4>
+		<ul>
+				<li>
+<a href="Yate.Api.Config.html#_getNodeUri">						<code>Yate\Api\Config::getNodeUri()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getNodeUri">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getNodeSecret" id="_getNodeSecret">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.ConfigInterface.html#33-43" title="Go to source code">getNodeSecret</a>(<span>string <var>$node</var></span>): string</code>
+
+
+	<div class="expandable-collapsedView">
+		Provides access secret for given node
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Provides access secret for given node</p>
+<p>Should return access secret for a given node as string. If there no secret for a
+node configured, YateException must be thrown.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Yate.Api.Exception.YateException.html"><span>Yate\Api\Exception\YateException</span></a></code>&nbsp;</td>
+										<td></td>
+									</tr>
+							</table>
+
+		<h4>Implemented by</h4>
+		<ul>
+				<li>
+<a href="Yate.Api.Config.html#_getNodeSecret">						<code>Yate\Api\Config::getNodeSecret()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getNodeSecret">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+
+		</div>
+
+		<div class="layout-footer">
+			Yate core API wrapper API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.4</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>
