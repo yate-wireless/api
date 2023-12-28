@@ -27,11 +27,14 @@ class ConfigTest extends \PHPUnit\Framework\TestCase
 
     public function testWithNodeList()
     {
-        $nodes = [
-            ['nodes' => ['node1'], 'uri' => 'http://node1.dom/', 'secret' => 'secret1'],
-            [['node2'], 'http://node2.dom/', 'secret2'],
-            ['nodes' => ['node3'], 'uri' => 'http://node3.dom/', 'secret' => 'secret3'],
-        ];
+        $nodes = [[['node1'], 'http://node1.dom/', 'secret1']];
+        if (version_compare(PHP_VERSION, '8.0', '>=')) {
+            $nodes[] = ['nodes' => ['node2'], 'uri' => 'http://node2.dom/', 'secret' => 'secret2'];
+        } else {
+            $nodes[] = [['node2'], 'http://node2.dom/', 'secret2'];
+        }
+        $nodes[] = [['node3'], 'http://node3.dom/', 'secret3'];
+
         $config = new Config();
         $this->assertEquals($config, $config->withNodeList($nodes));
         foreach ([1, 2, 3] as $i) {
