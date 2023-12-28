@@ -147,11 +147,11 @@ from whereever you want: file, environments, e.t.c.</p>
 
 
 	<div class="expandable-collapsedView">
-		Setup Yate API node records
+		Setup Yate API node records for one host/server
 	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Setup Yate API node records</p>
+	<div class="description"><p>Setup Yate API node records for one host/server</p>
 <p>Usual, multiple yate 'nodes' may reside on one host and share one API
 entry point.</p>
 <p>Then, we need each api entry point to be registered in the config with a lost of
@@ -192,6 +192,54 @@ record will survive.</p>
 			<a href="#_withNode">#</a>
 		</td>
 	</tr>
+	<tr class="expandable collapsed" data-order="withNodeList" id="_withNodeList">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Yate.Api.Config.html#53-73" title="Go to source code">withNodeList</a>(<span>array[] <var>$nodes</var></span>): self</code>
+
+
+	<div class="expandable-collapsedView">
+		Setup Yate API nodes for multiple hosts/seervers
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Setup Yate API nodes for multiple hosts/seervers</p>
+<p>In fact, it is a shorthand for iteration over array and send each array
+element to withNode() as:</p>
+<pre><code>withNode(...$element);
+</code></pre>
+<p>So, it is expected that each elemen is an array too and it's content match
+withNode() args by order, and, for future PHP versions, by key names.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$nodes</var>&nbsp;&nbsp;</td>
+										<td><p>array of withNode() argument arrays</p>
+</td>
+									</tr>
+							</table>
+
+							<h4>Returns</h4>
+							<div><p>For chaining</p>
+</div>
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_withNodeList">#</a>
+		</td>
+	</tr>
 	<tr class="expandable collapsed" data-order="getNodeUri" id="_getNodeUri">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
@@ -203,7 +251,7 @@ record will survive.</p>
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Yate.Api.Config.html#53-69" title="Go to source code">getNodeUri</a>(<span>string <var>$node</var></span>): string</code>
+				<code><a href="source-Yate.Api.Config.html#75-91" title="Go to source code">getNodeUri</a>(<span>string <var>$node</var></span>): string</code>
 
 
 	<div class="expandable-collapsedView">
@@ -248,7 +296,7 @@ node configured, YateConfigException must be thrown.</p>
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Yate.Api.Config.html#71-87" title="Go to source code">getNodeSecret</a>(<span>string <var>$node</var></span>): string</code>
+				<code><a href="source-Yate.Api.Config.html#93-109" title="Go to source code">getNodeSecret</a>(<span>string <var>$node</var></span>): string</code>
 
 
 	<div class="expandable-collapsedView">

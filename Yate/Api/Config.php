@@ -23,7 +23,7 @@ class Config implements ConfigInterface
     protected array $secrets = [];
 
     /**
-     * Setup Yate API node records
+     * Setup Yate API node records for one host/server
      *
      * Usual, multiple yate 'nodes' may reside on one host and share one API
      * entry point.
@@ -46,6 +46,28 @@ class Config implements ConfigInterface
         foreach ($nodes as $node) {
             $this->uris[$node] = $uri;
             $this->secrets[$node] = $secret;
+        }
+        return $this;
+    }
+
+    /**
+     * Setup Yate API nodes for multiple hosts/seervers
+     *
+     * In fact, it is a shorthand for iteration over array and send each array
+     * element to withNode() as:
+     * ```
+     * withNode(...$element);
+     * ```
+     * So, it is expected that each elemen is an array too and it's content match
+     * withNode() args by order, and, for future PHP versions, by key names.
+     *
+     * @param array[] $nodes array of withNode() argument arrays
+     * @return self For chaining
+     */
+    public function withNodeList(iterable $nodes): self
+    {
+        foreach ($nodes as $node) {
+            $this->withNode(...$node);
         }
         return $this;
     }
