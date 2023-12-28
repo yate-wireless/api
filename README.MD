@@ -18,12 +18,12 @@ Mostly, you only need to:
 - Use `call()` method to send api requests to proper nodes and got `ApiResponse` object
 - Access response fields as associated array or properties
 
-More complex scenario: instead of use `call()` you may use `prepareRequest()` method to convert you functional request to API to PSR-7 standard request object, send it, got PSR-7 Response object and thet process it with static `Api::parseResult()` to `ApiResponse object.
+More complex scenario: instead of use `call()` you may use `prepareRequest()` method to convert you functional request to API to PSR-7 standard request object, send it, got PSR-7 Response object and thet process it with static `Api::parseResult()` to `ApiResponse` object.
 This could be useful for async and bulk operations which are not supported by PSR-18 client interface.
 
 For example, you need to complete 1000 independent calls as soon as possible, so you use above methods combined with Guzzle [concurrent requests](https://docs.guzzlephp.org/en/stable/quickstart.html#concurrent-requests) feature, so Guzzle do it's job for concurent call while this lib provides API request to PSR-7 request and PSR-7 response to functional result.
 
-Also, `prepareRequest()` and `Api::parseResult()` should wwork fine in Async calls/promises and may be used in extra promise layer to implement asyn call to Yate API.
+Also, `prepareRequest()` and `Api::parseResult()` should work fine in Async calls/promises and may be used in extra promise layer to implement async call to Yate API.
 
 ## Installation
 In the Composer storage. Just add proper require section:
