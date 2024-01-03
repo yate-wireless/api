@@ -36,13 +36,13 @@ Please, review the [changelog](https://github.com/yate-wireless/api/blob/master/
 
 ## Dependencies
 Composer dependencies:
-- php: ^7.4|^8.0|^8.1|^8.2
+- php: ^7.4|^8.0|^8.1|^8.2|^8.3
 - psr/http-message-implementation: ^1.0
 - psr/http-factory-implementation: ^1.0
 - psr/http-client-implementation: ^1.0
 
 ## Testing
-Tested with PHPUnit 9.6 on php 7.4 to 8.2, 100% coverage, which does not mean everything will work as intended. Guzzle PSR-7 used for unit tests.
+Tested with PHPUnit 9.6 on php 7.4 to 8.3, 100% coverage, which does not mean everything will work as intended. Guzzle PSR-7 used for unit tests.
 
 Current testing and compatibility status check on [Github flows](https://github.com/yate-wireless/api/actions/workflows/Compatibility.yml)
 
